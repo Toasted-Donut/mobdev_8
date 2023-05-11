@@ -3,6 +3,8 @@ package com.example.mobdev8;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
             Log.e("gg", ex.toString());
         }
         //Shared Preferences
-        //TBD
+        SharedPreferences setts = this.getSharedPreferences("settings", Context.MODE_PRIVATE);
+        setts.edit().putString("key1","text in sharedPrefernces").apply();
+        Log.w("gg",setts.getString("key1","default"));
 
         //DataBase
         AppDatabase db = Room.databaseBuilder(MainActivity.this,AppDatabase.class,"donutsBase").build();
