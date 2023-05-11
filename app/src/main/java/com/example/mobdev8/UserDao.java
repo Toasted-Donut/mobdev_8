@@ -21,7 +21,7 @@ public interface UserDao {
     User findByName(String first, String last);
 
     @Query("SELECT first_name FROM user WHERE age > :minAge")
-    String[] loadNamesOfUsersOlderThan(int minAge);
+    List<String> loadNamesOfUsersOlderThan(int minAge);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(User... users);

@@ -6,13 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/name"
+            android:hint="имя"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/lastname"
+            android:hint="фамилия"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"/>
+        <EditText
+            android:id="@+id/age"
+            android:hint="возраст"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:inputType="number" />
+        <Button
+            android:id="@+id/btn_add"
+            android:text="добавить"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_show"
+            android:text="показать всех"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/btn_older"
+            android:text="старше 20 лет"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
